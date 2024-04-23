@@ -23,11 +23,11 @@ export default function MoviesPage() {
   return (
     <div className="max-h-dvh overflow-hidden">
       <header className="flex justify-between items-center px-6 h-[10dvh]">
-        <div className="relative">
-          <input onChange={searchHandler} type="search" className="border border-gray-300" />
-          <div className="absolute h-[80dvh] w-[90vw] px-6 py-2 bg-white z-50">
+        <div className="relative w-24">
+          <input onChange={searchHandler} type="search" className="border border-gray-300 w-full focus:w-[300px] transition-all duration-200" />
+          <div className={`absolute h-[80dvh] w-[90vw] px-6 py-2 bg-gray-600 text-white z-50 ${!searchResults.length && "hidden"}`}>
             results
-            {searchResults.map(result => result.media_type === "movie" && <MovieListItem movie={result} />)}
+            {searchResults.length ? searchResults.map(result => result.media_type === "movie" && <MovieListItem movie={result} />) : (<p>Der var ingen resultater</p>)}
           </div>
         </div>
         <h1 className="text-3xl font-semibold text-center">Mooviez</h1>
