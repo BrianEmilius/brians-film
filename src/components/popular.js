@@ -18,7 +18,7 @@ export default function Popular() {
 	return (
 		<section className="px-6">
 			<h2 className="font-semibold text-xl mb-4">Popular</h2>
-			<ul className="overflow-y-scroll snap-y max-h-[36dvh]">
+			<ul className="overflow-y-scroll snap-y max-h-[32dvh]">
 				{data.results.map((movie) => (
 					<li key={movie.id} className="mb-4 snap-start">
 						<Link href={`/title/${movie.id}`} className="block after:clear-both after:content-[''] after:table ">
